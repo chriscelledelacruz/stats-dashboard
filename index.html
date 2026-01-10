@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Stats Widget</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #f0f4f8;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .widget {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 20px;
+      padding: 28px;
+      color: white;
+      background: linear-gradient(135deg, #0057B8 0%, #003d82 100%);
+      box-shadow: 0 10px 40px rgba(0, 87, 184, 0.3);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .logo {
+      display: flex;
+      gap: 2px;
+    }
+
+    .shield {
+      width: 4px;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 1px 1px 0 2px;
+    }
+
+    .stats-list {
+      list-style: none;
+    }
+
+    .stat-item {
+      padding: 14px 12px;
+      margin: 0 -12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeSlideIn 0.5s ease forwards;
+    }
+
+    .stat-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .stat-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .stat-item:nth-child(1) { animation-delay: 0.1s; }
+    .stat-item:nth-child(2) { animation-delay: 0.2s; }
+    .stat-item:nth-child(3) { animation-delay: 0.3s; }
+    .stat-item:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .stat-value {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .stat-item.has-progress {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 3px;
+      width: 0%;
+      transition: width 0.8s ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stat-item {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+      .progress-fill {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="widget">
+    <div class="header">
+      <h3 class="title">Your Quick Stats</h3>
+      <div class="logo">
+        <div class="shield"></div>
+        <div class="shield"></div>
+        <div class="shield"></div>
+      </div>
+    </div>
+
+    <ul class="stats-list">
+      <li class="stat-item">
+        <div class="stat-row">
+          <span class="stat-label">PTO Balance</span>
+          <span class="stat-value">84 hrs</span>
+        </div>
+      </li>
+
+      <li class="stat-item has-progress">
+        <div class="stat-row">
+          <span class="stat-label">CME Credits</span>
+          <span class="stat-value">18/25</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" data-progress="72"></div>
+        </div>
+      </li>
+
+      <li class="stat-item">
+        <div class="stat-row">
+          <span class="stat-label">Recognitions Received</span>
+          <span class="stat-value">12</span>
+        </div>
+      </li>
+
+      <li class="stat-item has-progress">
+        <div class="stat-row">
+          <span class="stat-label">Trainings Complete</span>
+          <span class="stat-value">94%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" data-progress="94"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // Animate progress bars on load
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.progress-fill').forEach(bar => {
+          const progress = bar.getAttribute('data-progress');
+          bar.style.width = progress + '%';
+        });
+      }, 300);
+    });
+  </script>
+
+</body>
+</html>
