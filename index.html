@@ -1,3 +1,369 @@
+
+Showcase Demo 02/2026
+/
+can you give me an animated icon for these -make it healthcare specific and branded to Mayo Clinic:
+
+"My Day" 
+"Payslips"
+"Training"
+"Recognitions"
+
+10:15 AM
+I'll create animated healthcare-themed icons branded to Mayo Clinic's style. Let me first check the frontend design skill for best practices.
+
+Check frontend design skill for best practices
+Now I'll create animated Mayo Clinic-branded icons. Mayo Clinic's brand uses their distinctive triple-shield logo colors: a deep blue (
+#0057B8) as primary, with clean, professional healthcare aesthetics.
+
+
+Create animated Mayo Clinic branded healthcare icons
+mayo-icons.jsx
+create a downloadable asset/animated icon for these -make it healthcare specific and branded to Mayo Clinic:  "My Day"  "Payslips" "Training" "Recognitions"
+
+10:16 AM
+I'll create downloadable animated SVG icons branded to Mayo Clinic's style. Let me build these for you.
+
+
+3 steps
+
+Create Mayo Clinic branded animated icon for Recognitions
+mayo-icon-recognitions.svg
+
+Presented 4 files
+Here are your four animated SVG icons branded to Mayo Clinic:
+
+My Day – Features a rotating sun with pulsing rays, a calendar with a heartbeat-animated heart, and the Mayo shield accent
+
+Payslips – Shows a floating paycheck document with animated dollar sign, verification checkmark, and stacked coins
+
+Training – Displays an open medical book with the Mayo cross, floating graduation cap with swaying tassel, and knowledge sparkles
+
+Recognitions – Features a gold medal with the Mayo triple-shield design, flowing ribbons, animated sparkles, and a heartbeat heart
+
+All icons use Mayo Clinic's signature blue (
+#0057B8), include the Mayo shield motif, and have smooth CSS animations built directly into the SVG files. They're scalable and work on any background.
+
+Mayo icon my day
+Image · SVG 
+Mayo icon payslips
+Image · SVG 
+Mayo icon training
+Image · SVG 
+Mayo icon recognitions
+Image · SVG 
+how can I use this as an image? I want to upload it directly in my website
+
+10:19 AM
+SVG files can be used directly on websites in several ways. Here are your options:
+
+Direct Methods (SVGs work as-is)
+1. Image tag – simplest approach:
+
+html
+<img src="mayo-icon-my-day.svg" alt="My Day" width="120" height="120">
+2. Inline SVG – paste the SVG code directly into your HTML for full animation support:
+
+html
+<div class="icon">
+  <!-- paste entire SVG code here -->
+</div>
+3. CSS background:
+
+css
+.my-day-icon {
+  background-image: url('mayo-icon-my-day.svg');
+  width: 120px;
+  height: 120px;
+}
+If You Need PNG/GIF Instead
+Some platforms don't support animated SVGs well. Let me convert these to animated GIFs for you:
+
+
+Install libraries for image conversion
+
+
+I can't install conversion tools due to network restrictions, but here's what you can do:
+
+Recommended: Use SVGs Directly
+SVGs are the best option for web – they're:
+
+Scalable (crisp at any size)
+Lightweight (smaller file size)
+Animations work natively in browsers
+Just upload the .svg files to your website and use:
+
+html
+<img src="mayo-icon-my-day.svg" alt="My Day">
+If Your Platform Requires PNG/GIF
+Use a free online converter:
+
+SVG to PNG: svgtopng.com or cloudconvert.com
+SVG to Animated GIF: ezgif.com – this preserves animations
+Quick Tips
+Platform	Best Format
+Custom website	SVG ✓
+WordPress	SVG (may need plugin)
+Shopify	SVG or PNG
+Email	PNG (animations won't work)
+Social media	GIF or PNG
+Would you like me to create static PNG versions instead, or help with specific implementation code for your website?
+
+can you create animated pngs? or not
+
+10:20 AM
+Animated PNGs (APNG) do exist, but I can't create them right now because:
+
+Network is disabled – I can't install the image processing libraries needed (like cairosvg, pillow, or ffmpeg)
+SVG animations are code-based – Converting CSS/SMIL animations to frame-by-frame APNG requires rendering each frame, which needs graphics libraries I can't access
+Your Best Options
+Option A: Use the SVGs directly (recommended)
+
+Modern browsers fully support animated SVGs
+They're smaller and sharper than APNGs
+Option B: Convert online yourself
+
+Go to ezgif.com/svg-to-gif
+Upload each SVG
+Choose "APNG" as output format
+Download the animated PNGs
+Option C: Use Lottie format
+
+If you want lightweight web animations, I could create these as Lottie JSON files instead
+Works great with the Lottie web player
+Quick Comparison
+Format	Animated	Browser Support	File Size	Best For
+SVG	✓	All modern	Tiny	Websites
+APNG	✓	All modern	Medium	When SVG won't work
+GIF	✓	Universal	Large	Email, legacy
+Lottie	✓	Needs player	Tiny	Apps, web
+Would you like me to create Lottie versions, or will the SVGs work for your use case?
+
+hm it's not working, can you create static images for these? and give me a css that will provide some type of modern animation to each
+
+10:25 AM
+
+2 steps
+
+Check for librsvg
+
+
+
+Find rsvg-convert location
+
+
+Let me create clean static SVGs without animations and then provide CSS animations you can apply:
+
+
+5 steps
+
+Check if PIL is available
+
+
+
+Check for SVG conversion libraries
+
+
+Let me create the PNGs using a different approach - I'll create them as base64 encoded images through a canvas-based method:
+
+
+Create HTML file that renders SVGs to downloadable PNGs
+mayo-icons-download.html
+Now let me also create a clean CSS file you can use directly:
+
+
+Create standalone CSS file with animations
+mayo-icons-animations.css
+
+Presented 2 files
+Here's what I've created:
+
+1. HTML Download Page - Open this file in your browser to:
+
+See all 4 icons with live CSS animations
+Click "Download PNG" buttons to save each as a 240×240 PNG
+Copy the CSS code shown at the bottom
+2. CSS Animation File - Ready-to-use stylesheet with:
+
+My Day: Gentle pulse with blue glow
+Payslips: Smooth floating effect
+Training: Subtle bounce motion
+Recognitions: Golden shimmer effect
+Hover states and reduced-motion support
+How to Use
+html
+<!-- In your HTML -->
+<link rel="stylesheet" href="mayo-icons-animations.css">
+
+<img src="mayo-icon-my-day.png" class="icon-my-day" alt="My Day">
+<img src="mayo-icon-payslips.png" class="icon-payslips" alt="Payslips">
+<img src="mayo-icon-training.png" class="icon-training" alt="Training">
+<img src="mayo-icon-recognitions.png" class="icon-recognitions" alt="Recognitions">
+Open the HTML file in Chrome/Firefox, download the PNGs, then add the CSS classes to animate them on your site!
+
+Mayo icons download
+Code · HTML 
+Mayo icons animations
+Code · CSS 
+can you show me the best way to present these four animated icons on a desktop intranet experience?
+
+10:37 AM
+I'll create a polished desktop intranet dashboard showcasing these icons with modern healthcare-appropriate design.
+
+
+Create Mayo Clinic intranet dashboard with animated icons
+mayo-intranet-dashboard.html
+
+Presented file
+Here's a complete Mayo Clinic intranet dashboard showcasing the four animated icons.
+
+Key Design Features:
+
+Professional header with Mayo triple-shield logo, search bar, and user profile
+4-column quick actions grid with the animated icons as hero elements
+Notification badges (New, 3 Due) to draw attention where needed
+Hover interactions that pause animations and scale icons smoothly
+Announcements section with healthcare-relevant content
+Stats sidebar showing PTO, CME credits, recognitions, training progress
+Animation Details:
+
+Icon	Animation	Purpose
+My Day	Pulse + glow	Draws daily attention
+Payslips	Float	Suggests paper/documents
+Training	Subtle bounce	Energetic, learning-focused
+Recognitions	Golden shimmer	Achievement celebration
+Accessibility:
+
+prefers-reduced-motion support disables animations
+Proper contrast ratios
+Semantic HTML structure
+Open the HTML file in your browser to see it in action. The icons animate continuously but pause elegantly on hover.
+
+Mayo intranet dashboard
+Code · HTML 
+can you give me the standalone code for the "your quick stats" widget that I can use to build an embedded widget in a website
+
+10:41 AM
+
+Create standalone Quick Stats widget component
+mayo-quick-stats-widget.html
+
+Presented file
+Here's a standalone, embeddable Quick Stats widget.
+
+Enhancements I added:
+
+Progress bars for CME Credits and Training completion
+Staggered fade-in animation on load
+Hover states on each row
+Mayo triple-shield logo in the header
+BEM naming convention for easy styling overrides
+Reduced motion support for accessibility
+To embed in your site:
+
+html
+<!-- 1. Add the CSS to your stylesheet or <head> -->
+<style>
+  /* Copy the .mayo-stats-widget CSS */
+</style>
+
+<!-- 2. Add the HTML where you want the widget -->
+<div class="mayo-stats-widget">
+  <div class="mayo-stats-widget__header">
+    <h3 class="mayo-stats-widget__title">Your Quick Stats</h3>
+    <div class="mayo-stats-widget__logo">
+      <div class="mayo-stats-widget__shield"></div>
+      <div class="mayo-stats-widget__shield"></div>
+      <div class="mayo-stats-widget__shield"></div>
+    </div>
+  </div>
+  
+  <ul class="mayo-stats-widget__list">
+    <li class="mayo-stats-widget__item">
+      <span class="mayo-stats-widget__label">PTO Balance</span>
+      <span class="mayo-stats-widget__value">84 hrs</span>
+    </li>
+    <!-- Add more items... -->
+  </ul>
+</div>
+To update values dynamically:
+
+javascript
+// Example: Update PTO balance
+document.querySelector('.mayo-stats-widget__value').textContent = '92 hrs';
+
+// Example: Update progress bar
+document.querySelector('.mayo-stats-widget__progress-fill').style.width = '85%';
+Mayo quick stats widget
+Code · HTML 
+I wanna see the side bar to see the prototype in claude.. how do I do that?
+
+10:46 AM
+To see the prototype rendered in Claude's sidebar, I need to create it as a React artifact (.jsx file). Let me convert it for you:
+
+
+Create React artifact for Quick Stats widget preview
+mayo-quick-stats-widget.jsx
+
+Presented file
+The widget should now appear in the sidebar on the right. Click on it to see the live preview with:
+
+Staggered fade-in animations
+Progress bars that animate on load
+Hover effects on each row
+Mayo triple-shield logo
+You can interact with it directly in the preview panel. Want me to create the full intranet dashboard as a React artifact too?
+
+Mayo quick stats widget
+Code · JSX 
+I need this in an html file - and add some modern animation to it, esp the progress bar
+
+10:50 AM
+
+3 steps
+
+Presented file
+
+Architected HTML file with sophisticated progress bar animations.
+
+
+Click on the file in the sidebar to preview it. Here's what I added:
+
+Modern Animations:
+
+Element	Animation
+Widget	Slides up + scales in on load
+Stat items	Staggered slide-in from left
+Progress bars	Smooth grow with easing
+Shimmer	Continuous light sweep across bars
+Glow dot	Pulsing orb at progress bar end
+Mayo shields	Subtle synchronized pulse
+Hover states	Items shift right + icons scale up
+New Features:
+
+Added icons for each stat (clock, graduation cap, star, checkmark)
+Ambient gradient glow on widget background
+CSS custom properties for easy progress value changes (--progress: 72%)
+Reduced motion support for accessibility
+To update progress values, just change the --progress CSS variable:
+
+html
+<div class="progress-fill" style="--progress: 85%;"></div>
+Mayo stats widget animated
+Code · HTML 
+
+
+You've hit your session limit ∙ Resets at 2:00 PM
+Keep working
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+
+
+Mayo quick stats widget · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,135 +379,83 @@
 
     body {
       min-height: 100vh;
-      background: linear-gradient(135deg, #e8f4ff 0%, #dbeafe 50%, #e0e7ff 100%);
+      background: #f0f4f8;
+      padding: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
       font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* ==================== WIDGET CONTAINER ==================== */
-    .stats-widget {
+    .widget {
       width: 100%;
-      max-width: 340px;
-      background: linear-gradient(135deg, #0057B8 0%, #003d82 100%);
-      border-radius: 24px;
-      padding: 32px;
+      max-width: 320px;
+      border-radius: 20px;
+      padding: 28px;
       color: white;
-      box-shadow: 
-        0 4px 6px rgba(0, 87, 184, 0.1),
-        0 10px 40px rgba(0, 87, 184, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-      position: relative;
-      overflow: hidden;
-      animation: widgetSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      background: linear-gradient(135deg, #0057B8 0%, #003d82 100%);
+      box-shadow: 0 10px 40px rgba(0, 87, 184, 0.3);
     }
 
-    @keyframes widgetSlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    /* Ambient glow effect */
-    .stats-widget::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    /* ==================== HEADER ==================== */
-    .widget-header {
+    .header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 28px;
-      position: relative;
+      margin-bottom: 24px;
     }
 
-    .widget-title {
-      font-size: 18px;
+    .title {
+      font-size: 16px;
       font-weight: 600;
-      letter-spacing: -0.3px;
     }
 
-    .mayo-logo {
+    .logo {
       display: flex;
-      gap: 3px;
-      animation: logoFade 0.8s ease 0.3s forwards;
-      opacity: 0;
-    }
-
-    @keyframes logoFade {
-      to { opacity: 1; }
+      gap: 2px;
     }
 
     .shield {
-      width: 5px;
-      height: 16px;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 2px 2px 0 3px;
-      animation: shieldPulse 3s ease-in-out infinite;
+      width: 4px;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 1px 1px 0 2px;
     }
 
-    .shield:nth-child(2) { animation-delay: 0.15s; }
-    .shield:nth-child(3) { animation-delay: 0.3s; }
-
-    @keyframes shieldPulse {
-      0%, 100% { opacity: 0.85; transform: scaleY(1); }
-      50% { opacity: 1; transform: scaleY(1.05); }
-    }
-
-    /* ==================== STATS LIST ==================== */
     .stats-list {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
     }
 
     .stat-item {
-      padding: 16px;
-      margin: 0 -16px;
-      border-radius: 12px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 12px;
+      margin: 0 -12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: background 0.2s ease;
       opacity: 0;
-      transform: translateX(-20px);
-      animation: itemSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transform: translateY(10px);
+      animation: fadeSlideIn 0.5s ease forwards;
     }
 
-    .stat-item:nth-child(1) { animation-delay: 0.15s; }
-    .stat-item:nth-child(2) { animation-delay: 0.25s; }
-    .stat-item:nth-child(3) { animation-delay: 0.35s; }
-    .stat-item:nth-child(4) { animation-delay: 0.45s; }
-
-    @keyframes itemSlideIn {
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    .stat-item:hover {
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .stat-item:last-child {
       border-bottom: none;
+      padding-bottom: 0;
     }
 
-    .stat-item:hover {
-      background: rgba(255, 255, 255, 0.12);
-      transform: translateX(4px);
+    .stat-item:nth-child(1) { animation-delay: 0.1s; }
+    .stat-item:nth-child(2) { animation-delay: 0.2s; }
+    .stat-item:nth-child(3) { animation-delay: 0.3s; }
+    .stat-item:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .stat-row {
@@ -152,170 +466,55 @@
 
     .stat-label {
       font-size: 14px;
-      font-weight: 400;
       opacity: 0.9;
     }
 
     .stat-value {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: -0.5px;
-      font-variant-numeric: tabular-nums;
     }
 
-    /* ==================== PROGRESS BAR ==================== */
-    .progress-wrapper {
-      margin-top: 12px;
+    .stat-item.has-progress {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .progress-track {
+    .progress-bar {
       width: 100%;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
       overflow: hidden;
-      position: relative;
     }
 
     .progress-fill {
       height: 100%;
-      border-radius: 10px;
-      position: relative;
-      width: 0;
-      animation: progressGrow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      background: linear-gradient(90deg, 
-        rgba(255,255,255,0.7) 0%, 
-        rgba(255,255,255,0.95) 50%, 
-        rgba(255,255,255,0.7) 100%
-      );
-      background-size: 200% 100%;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 3px;
+      width: 0%;
+      transition: width 0.8s ease;
     }
 
-    .stat-item:nth-child(2) .progress-fill {
-      animation-delay: 0.5s;
-    }
-
-    .stat-item:nth-child(4) .progress-fill {
-      animation-delay: 0.7s;
-    }
-
-    @keyframes progressGrow {
-      to {
-        width: var(--progress);
-      }
-    }
-
-    /* Shimmer effect on progress bar */
-    .progress-fill::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.4) 50%,
-        transparent 100%
-      );
-      animation: shimmer 2s ease-in-out infinite;
-      animation-delay: 1.5s;
-    }
-
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    /* Glow pulse on progress */
-    .progress-fill::before {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 12px;
-      height: 12px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.6);
-      opacity: 0;
-      animation: glowPulse 2s ease-in-out infinite;
-      animation-delay: 1.3s;
-    }
-
-    @keyframes glowPulse {
-      0%, 100% { 
-        opacity: 0;
-        transform: translateY(-50%) scale(0.8);
-      }
-      50% { 
-        opacity: 1;
-        transform: translateY(-50%) scale(1);
-      }
-    }
-
-    /* ==================== ICON INDICATORS ==================== */
-    .stat-icon {
-      width: 36px;
-      height: 36px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 14px;
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-    }
-
-    .stat-item:hover .stat-icon {
-      background: rgba(255, 255, 255, 0.25);
-      transform: scale(1.1);
-    }
-
-    .stat-icon svg {
-      width: 18px;
-      height: 18px;
-      stroke: white;
-      stroke-width: 2;
-      fill: none;
-    }
-
-    .stat-left {
-      display: flex;
-      align-items: center;
-    }
-
-    /* ==================== REDUCED MOTION ==================== */
     @media (prefers-reduced-motion: reduce) {
-      .stats-widget,
-      .stat-item,
-      .mayo-logo,
-      .progress-fill {
+      .stat-item {
         animation: none;
         opacity: 1;
         transform: none;
       }
-      
       .progress-fill {
-        width: var(--progress);
-      }
-      
-      .progress-fill::after,
-      .progress-fill::before {
-        animation: none;
+        transition: none;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="stats-widget">
-    <div class="widget-header">
-      <h3 class="widget-title">Your Quick Stats</h3>
-      <div class="mayo-logo">
+  <div class="widget">
+    <div class="header">
+      <h3 class="title">Your Quick Stats</h3>
+      <div class="logo">
         <div class="shield"></div>
         <div class="shield"></div>
         <div class="shield"></div>
@@ -323,80 +522,53 @@
     </div>
 
     <ul class="stats-list">
-      <!-- PTO Balance -->
       <li class="stat-item">
         <div class="stat-row">
-          <div class="stat-left">
-            <div class="stat-icon">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </div>
-            <span class="stat-label">PTO Balance</span>
-          </div>
+          <span class="stat-label">PTO Balance</span>
           <span class="stat-value">84 hrs</span>
         </div>
       </li>
 
-      <!-- CME Credits -->
-      <li class="stat-item">
+      <li class="stat-item has-progress">
         <div class="stat-row">
-          <div class="stat-left">
-            <div class="stat-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-              </svg>
-            </div>
-            <span class="stat-label">CME Credits</span>
-          </div>
+          <span class="stat-label">CME Credits</span>
           <span class="stat-value">18/25</span>
         </div>
-        <div class="progress-wrapper">
-          <div class="progress-track">
-            <div class="progress-fill" style="--progress: 72%;"></div>
-          </div>
+        <div class="progress-bar">
+          <div class="progress-fill" data-progress="72"></div>
         </div>
       </li>
 
-      <!-- Recognitions -->
       <li class="stat-item">
         <div class="stat-row">
-          <div class="stat-left">
-            <div class="stat-icon">
-              <svg viewBox="0 0 24 24">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-              </svg>
-            </div>
-            <span class="stat-label">Recognitions</span>
-          </div>
+          <span class="stat-label">Recognitions Received</span>
           <span class="stat-value">12</span>
         </div>
       </li>
 
-      <!-- Trainings Complete -->
-      <li class="stat-item">
+      <li class="stat-item has-progress">
         <div class="stat-row">
-          <div class="stat-left">
-            <div class="stat-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M9 11l3 3L22 4"/>
-                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-              </svg>
-            </div>
-            <span class="stat-label">Trainings Complete</span>
-          </div>
+          <span class="stat-label">Trainings Complete</span>
           <span class="stat-value">94%</span>
         </div>
-        <div class="progress-wrapper">
-          <div class="progress-track">
-            <div class="progress-fill" style="--progress: 94%;"></div>
-          </div>
+        <div class="progress-bar">
+          <div class="progress-fill" data-progress="94"></div>
         </div>
       </li>
     </ul>
   </div>
+
+  <script>
+    // Animate progress bars on load
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.progress-fill').forEach(bar => {
+          const progress = bar.getAttribute('data-progress');
+          bar.style.width = progress + '%';
+        });
+      }, 300);
+    });
+  </script>
 
 </body>
 </html>
