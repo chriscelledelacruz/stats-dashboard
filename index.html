@@ -13,83 +13,135 @@
 
     body {
       min-height: 100vh;
-      background: #f0f4f8;
-      padding: 40px;
+      background: linear-gradient(135deg, #e8f4ff 0%, #dbeafe 50%, #e0e7ff 100%);
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 40px 20px;
       font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    .widget {
+    /* ==================== WIDGET CONTAINER ==================== */
+    .stats-widget {
       width: 100%;
-      max-width: 320px;
-      border-radius: 20px;
-      padding: 28px;
-      color: white;
+      max-width: 340px;
       background: linear-gradient(135deg, #0057B8 0%, #003d82 100%);
-      box-shadow: 0 10px 40px rgba(0, 87, 184, 0.3);
+      border-radius: 24px;
+      padding: 32px;
+      color: white;
+      box-shadow: 
+        0 4px 6px rgba(0, 87, 184, 0.1),
+        0 10px 40px rgba(0, 87, 184, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      position: relative;
+      overflow: hidden;
+      animation: widgetSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    .header {
+    @keyframes widgetSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Ambient glow effect */
+    .stats-widget::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* ==================== HEADER ==================== */
+    .widget-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      position: relative;
     }
 
-    .title {
-      font-size: 16px;
+    .widget-title {
+      font-size: 18px;
       font-weight: 600;
+      letter-spacing: -0.3px;
     }
 
-    .logo {
+    .mayo-logo {
       display: flex;
-      gap: 2px;
+      gap: 3px;
+      animation: logoFade 0.8s ease 0.3s forwards;
+      opacity: 0;
+    }
+
+    @keyframes logoFade {
+      to { opacity: 1; }
     }
 
     .shield {
-      width: 4px;
-      height: 14px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 1px 1px 0 2px;
+      width: 5px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 2px 2px 0 3px;
+      animation: shieldPulse 3s ease-in-out infinite;
     }
 
+    .shield:nth-child(2) { animation-delay: 0.15s; }
+    .shield:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes shieldPulse {
+      0%, 100% { opacity: 0.85; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.05); }
+    }
+
+    /* ==================== STATS LIST ==================== */
     .stats-list {
       list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
     .stat-item {
-      padding: 14px 12px;
-      margin: 0 -12px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 8px;
+      padding: 16px;
+      margin: 0 -16px;
+      border-radius: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       cursor: pointer;
-      transition: background 0.2s ease;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       opacity: 0;
-      transform: translateY(10px);
-      animation: fadeSlideIn 0.5s ease forwards;
+      transform: translateX(-20px);
+      animation: itemSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    .stat-item:hover {
-      background: rgba(255, 255, 255, 0.1);
+    .stat-item:nth-child(1) { animation-delay: 0.15s; }
+    .stat-item:nth-child(2) { animation-delay: 0.25s; }
+    .stat-item:nth-child(3) { animation-delay: 0.35s; }
+    .stat-item:nth-child(4) { animation-delay: 0.45s; }
+
+    @keyframes itemSlideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     .stat-item:last-child {
       border-bottom: none;
-      padding-bottom: 0;
     }
 
-    .stat-item:nth-child(1) { animation-delay: 0.1s; }
-    .stat-item:nth-child(2) { animation-delay: 0.2s; }
-    .stat-item:nth-child(3) { animation-delay: 0.3s; }
-    .stat-item:nth-child(4) { animation-delay: 0.4s; }
-
-    @keyframes fadeSlideIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .stat-item:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateX(4px);
     }
 
     .stat-row {
@@ -100,55 +152,170 @@
 
     .stat-label {
       font-size: 14px;
+      font-weight: 400;
       opacity: 0.9;
     }
 
     .stat-value {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       letter-spacing: -0.5px;
+      font-variant-numeric: tabular-nums;
     }
 
-    .stat-item.has-progress {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    /* ==================== PROGRESS BAR ==================== */
+    .progress-wrapper {
+      margin-top: 12px;
     }
 
-    .progress-bar {
+    .progress-track {
       width: 100%;
-      height: 6px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 3px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
       overflow: hidden;
+      position: relative;
     }
 
     .progress-fill {
       height: 100%;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 3px;
-      width: 0%;
-      transition: width 0.8s ease;
+      border-radius: 10px;
+      position: relative;
+      width: 0;
+      animation: progressGrow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      background: linear-gradient(90deg, 
+        rgba(255,255,255,0.7) 0%, 
+        rgba(255,255,255,0.95) 50%, 
+        rgba(255,255,255,0.7) 100%
+      );
+      background-size: 200% 100%;
     }
 
+    .stat-item:nth-child(2) .progress-fill {
+      animation-delay: 0.5s;
+    }
+
+    .stat-item:nth-child(4) .progress-fill {
+      animation-delay: 0.7s;
+    }
+
+    @keyframes progressGrow {
+      to {
+        width: var(--progress);
+      }
+    }
+
+    /* Shimmer effect on progress bar */
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 100%
+      );
+      animation: shimmer 2s ease-in-out infinite;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Glow pulse on progress */
+    .progress-fill::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.6);
+      opacity: 0;
+      animation: glowPulse 2s ease-in-out infinite;
+      animation-delay: 1.3s;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { 
+        opacity: 0;
+        transform: translateY(-50%) scale(0.8);
+      }
+      50% { 
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+      }
+    }
+
+    /* ==================== ICON INDICATORS ==================== */
+    .stat-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 14px;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .stat-item:hover .stat-icon {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.1);
+    }
+
+    .stat-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .stat-left {
+      display: flex;
+      align-items: center;
+    }
+
+    /* ==================== REDUCED MOTION ==================== */
     @media (prefers-reduced-motion: reduce) {
-      .stat-item {
+      .stats-widget,
+      .stat-item,
+      .mayo-logo,
+      .progress-fill {
         animation: none;
         opacity: 1;
         transform: none;
       }
+      
       .progress-fill {
-        transition: none;
+        width: var(--progress);
+      }
+      
+      .progress-fill::after,
+      .progress-fill::before {
+        animation: none;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="widget">
-    <div class="header">
-      <h3 class="title">Your Quick Stats</h3>
-      <div class="logo">
+  <div class="stats-widget">
+    <div class="widget-header">
+      <h3 class="widget-title">Your Quick Stats</h3>
+      <div class="mayo-logo">
         <div class="shield"></div>
         <div class="shield"></div>
         <div class="shield"></div>
@@ -156,53 +323,80 @@
     </div>
 
     <ul class="stats-list">
+      <!-- PTO Balance -->
       <li class="stat-item">
         <div class="stat-row">
-          <span class="stat-label">PTO Balance</span>
+          <div class="stat-left">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <span class="stat-label">PTO Balance</span>
+          </div>
           <span class="stat-value">84 hrs</span>
         </div>
       </li>
 
-      <li class="stat-item has-progress">
+      <!-- CME Credits -->
+      <li class="stat-item">
         <div class="stat-row">
-          <span class="stat-label">CME Credits</span>
+          <div class="stat-left">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <span class="stat-label">CME Credits</span>
+          </div>
           <span class="stat-value">18/25</span>
         </div>
-        <div class="progress-bar">
-          <div class="progress-fill" data-progress="72"></div>
+        <div class="progress-wrapper">
+          <div class="progress-track">
+            <div class="progress-fill" style="--progress: 72%;"></div>
+          </div>
         </div>
       </li>
 
+      <!-- Recognitions -->
       <li class="stat-item">
         <div class="stat-row">
-          <span class="stat-label">Recognitions Received</span>
+          <div class="stat-left">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <span class="stat-label">Recognitions</span>
+          </div>
           <span class="stat-value">12</span>
         </div>
       </li>
 
-      <li class="stat-item has-progress">
+      <!-- Trainings Complete -->
+      <li class="stat-item">
         <div class="stat-row">
-          <span class="stat-label">Trainings Complete</span>
+          <div class="stat-left">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 11l3 3L22 4"/>
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+              </svg>
+            </div>
+            <span class="stat-label">Trainings Complete</span>
+          </div>
           <span class="stat-value">94%</span>
         </div>
-        <div class="progress-bar">
-          <div class="progress-fill" data-progress="94"></div>
+        <div class="progress-wrapper">
+          <div class="progress-track">
+            <div class="progress-fill" style="--progress: 94%;"></div>
+          </div>
         </div>
       </li>
     </ul>
   </div>
-
-  <script>
-    // Animate progress bars on load
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        document.querySelectorAll('.progress-fill').forEach(bar => {
-          const progress = bar.getAttribute('data-progress');
-          bar.style.width = progress + '%';
-        });
-      }, 300);
-    });
-  </script>
 
 </body>
 </html>
